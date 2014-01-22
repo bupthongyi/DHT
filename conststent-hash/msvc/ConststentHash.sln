@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "conhash_test", "conhash_test\conhash_test.vcxproj", "{DBEA2EB7-FFF8-4987-94B9-04F65D70A6A5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "skiplist_test", "skiplist_test\skiplist_test.vcxproj", "{66839759-A4E2-4D66-ABE4-A1EAD9BEA672}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBEA2EB7-FFF8-4987-94B9-04F65D70A6A5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBEA2EB7-FFF8-4987-94B9-04F65D70A6A5}.Debug|Win32.Build.0 = Debug|Win32
+		{DBEA2EB7-FFF8-4987-94B9-04F65D70A6A5}.Release|Win32.ActiveCfg = Release|Win32
+		{DBEA2EB7-FFF8-4987-94B9-04F65D70A6A5}.Release|Win32.Build.0 = Release|Win32
+		{66839759-A4E2-4D66-ABE4-A1EAD9BEA672}.Debug|Win32.ActiveCfg = Debug|Win32
+		{66839759-A4E2-4D66-ABE4-A1EAD9BEA672}.Debug|Win32.Build.0 = Debug|Win32
+		{66839759-A4E2-4D66-ABE4-A1EAD9BEA672}.Release|Win32.ActiveCfg = Release|Win32
+		{66839759-A4E2-4D66-ABE4-A1EAD9BEA672}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
