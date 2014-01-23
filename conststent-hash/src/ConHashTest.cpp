@@ -47,14 +47,20 @@ int main(int argc, char *argv[])
     result = conhash_add(krch, machines[4], 8);
     assert(result == 0);
     
-printf("node_num[%u], vnode_num[%u]\n", krch->node_list->length, krch->vnode_list->length);
+	printf("node_num[%u], vnode_num[%u]\n", krch->node_list->length, krch->vnode_list->length);
     
-    for (i = 0; i < 20; i++) {
-        if (i%3 == 0) {
+    for (i = 0; i < 20; i++) 
+	{
+        if (i%3 == 0) 
+		{
 			wsprintfA(kick_value, "haha-%03d", i);
-        } else if (i%3 == 1) {
+        } 
+		else if (i%3 == 1) 
+		{
             wsprintfA(kick_value, "hehe-%03d", i);
-        } else {
+        } 
+		else 
+		{
             wsprintfA(kick_value, "hihi-%03d", i);
         }
         kick_node = conhash_locate(krch, kick_value);
@@ -67,21 +73,29 @@ printf("node_num[%u], vnode_num[%u]\n", krch->node_list->length, krch->vnode_lis
     result = conhash_remove(krch, machines[0]);
     assert(result == 0);
     printf("delete machine [%s]\n", machines[0]);
+
     result = conhash_remove(krch, machines[4]);
     assert(result == 0);
     printf("delete machine [%s]\n", machines[4]);
+
     result = conhash_adjust_weights(krch, machines[1], 5);
     assert(result == 0);
     printf("adjust machine[%s] weights[%u]\n", machines[1], 5);
-printf("node_num[%u], vnode_num[%u]\n", \
-           krch->node_list->length, krch->vnode_list->length);
+
+	printf("node_num[%u], vnode_num[%u]\n", krch->node_list->length, krch->vnode_list->length);
     
-    for (i = 0; i < 20; i++) {
-        if (i%3 == 0) {
+    for (i = 0; i < 20; i++) 
+	{
+        if (i%3 == 0) 
+		{
             wsprintfA(kick_value, "haha-%03d", i);
-        } else if (i%3 == 1) {
+        }
+		else if (i%3 == 1) 
+		{
             wsprintfA(kick_value, "hehe-%03d", i);
-        } else {
+        } 
+		else 
+		{
             wsprintfA(kick_value, "hihi-%03d", i);
         }
         kick_node = conhash_locate(krch, kick_value);

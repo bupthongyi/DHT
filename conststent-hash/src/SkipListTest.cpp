@@ -1,6 +1,6 @@
 #include "SkipList.h"
 
-#define VALUE_LENGTH 20
+#define VALUE_LENGTH 1000000
 
 
 static int MYCompare(const void *v1, const void *v2)
@@ -22,31 +22,48 @@ int main(int argc, char *argv[])
 
 	for (i=0; i<VALUE_LENGTH; ++i) 
 	{
-		value[i] = i+20;
-		if (i == 6) value[i] = value[i-1];
+		value[i] = rand();
 		printf("value[%d]=[%d]\n", i, value[i]);
-		skiplist_insert(krsl, value[i], &value[i]);
+		skiplist_insert(krsl, i, &value[i]);
 	}
 
-	void *pValue;
-	pValue = skiplist_lookup_cycle(krsl, value[7]);
-	if (*(int *)pValue == value[7]) {
-		printf("contain value[%d]:[%d]\n", 7, value[7]);
-	} else {
-		printf("not contain value[%d]:[%d], [%d]\n", 
-			7, value[7], *(int *)pValue);
+	for(i=10; i<VALUE_LENGTH+10; ++i)
+	{
+		void *pValue;
+		pValue = skiplist_lookup_cycle(krsl, i);
+		if (*(int *)pValue == value[i]) 
+		{
+			printf("contain value[%d]:[%d]\n", i, value[i]);
+		} 
+		else 
+		{
+			printf("not contain value[%d]:[%d], [%d]\n", i, value[i], *(int *)pValue);
+		}
 	}
 
-	int nRet = skiplist_delete(krsl, value[7], &value[7]);
-	printf("kr_skiplist_delete value[%d]:[%d] [%d]\n", 7, value[7], nRet);
+	//void *pValue;
+	//pValue = skiplist_lookup_cycle(krsl, value[7]);
+	//if (*(int *)pValue == value[7]) 
+	//{
+	//printf("contain value[%d]:[%d]\n", 7, value[7]);
+	//} 
+	//else 
+	//{
+	//printf("not contain value[%d]:[%d], [%d]\n", 7, value[7], *(int *)pValue);
+	//}
 
-	pValue = skiplist_lookup_cycle(krsl, value[7]);
-	if (*(int *)pValue == value[7]) {
-		printf("contain value[%d]:[%d]\n", 7, value[7]);
-	} else {
-		printf("not contain value[%d]:[%d], [%d]\n", 
-			7, value[7], *(int *)pValue);
-	}
+	//int nRet = skiplist_delete(krsl, value[7], &value[7]);
+	//printf("kr_skiplist_delete value[%d]:[%d] [%d]\n", 7, value[7], nRet);
+
+	//pValue = skiplist_lookup_cycle(krsl, value[7]);
+	//if (*(int *)pValue == value[7]) 
+	//{
+	//printf("contain value[%d]:[%d]\n", 7, value[7]);
+	//} 
+	//else 
+	//{
+	//printf("not contain value[%d]:[%d], [%d]\n", 7, value[7], *(int *)pValue);
+	//}
 
 	printf("level[%d], length[%d]\n", krsl->level, krsl->length);
 
